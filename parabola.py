@@ -8,12 +8,14 @@ b = st.slider('Coefficient b', -2.0, 2.0, 0.0, step=0.01)
 
 # Generate x values from -3 to 3
 x = np.linspace(-3, 3, 500)
-# Calculate y values for the parabola
-y = a * x ** 2 + b
+# Calculate y values for the parabola and cubic function
+y_parabola = a * x ** 2 + b
+y_cubic = a * x ** 3 + b
 
 # Create the plot
 fig, ax = plt.subplots()
-ax.plot(x, y, label=f'y = {a}x² + {b}')
+ax.plot(x, y_parabola, label=f'y = {a}x² + {b}')
+ax.plot(x, y_cubic, label=f'y = {a}x³ + {b}', linestyle='--')
 ax.set_xlim([-3, 3])
 ax.set_ylim([-3, 3])
 ax.axhline(0, color='black', lw=0.5)
